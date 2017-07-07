@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 
 const Todo = ({ onClick, completed, text }) => (
   <li
+    className='g-todolist__item'
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'

@@ -1,0 +1,54 @@
+$cell: 30px;
+
+.l-container {
+  box-sizing: border-box;
+  width: $cell * 10;
+  padding: $cell;
+  margin: 0 auto;
+  background: #ddd;
+  color: #000;
+}
+
+.g-form {
+  display: flex;
+}
+
+.g-input {
+  display: block;
+  box-sizing: border-box;
+  width: $cell * 6;
+  height: $cell;
+  padding: 5px;
+  border: 0;
+  line-height: $cell;
+  font-size: 18px;
+}
+
+.g-submit {
+  width: $cell * 2;
+  height: $cell;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  line-height: $cell;
+  font-size: 18px;
+  text-align: center;
+  background: #aaa;
+  color: #fff;
+}
+
+.g-todolist {
+  margin: $cell 0;
+}
+
+.g-todolist__item {
+  margin: $cell / 2 0;
+}
+
+.g-footer {
+  color: #333;
+}
+
+.g-footer__link {
+  color: #666;
+}

@@ -6,7 +6,7 @@ const Link = ({ active, children, onClick }) => {
   }
 
   return (
-    <a href='#'
+    <a href='#' className='g-footer__link'
        onClick={e => {
          e.preventDefault()
          onClick()
