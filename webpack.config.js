@@ -13,5 +13,26 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loaders: ['eslint-loader'],
+        enforce: 'pre',
+        include: [
+          path.resolve(__dirname, "src"),
+        ],
+      },
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, "src"),
+        loaders: ['react-hot-loader', 'babel-loader?plugins[]=transform-runtime']
+      },
+      {
+        test:   /\.css$/,
+        loader: "style-loader!css-loader!postcss-loader"
+      }
+    ]
+  }
 }
