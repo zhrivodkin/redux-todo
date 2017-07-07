@@ -10,6 +10,7 @@ let AddTodo = ({ dispatch }) => {
       <form className='g-form' onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
+          input.focus()
           return
         }
         dispatch(addTodo(input.value))

@@ -5,6 +5,7 @@ $cell: 30px;
   width: $cell * 10;
   padding: $cell;
   margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #ddd;
   color: #000;
 }
@@ -35,6 +36,8 @@ $cell: 30px;
   text-align: center;
   background: #aaa;
   color: #fff;
+  cursor: pointer;
+  &:hover { background: #999; }
 }
 
 .g-todolist {
@@ -42,7 +45,34 @@ $cell: 30px;
 }
 
 .g-todolist__item {
+  display: flex;
+  justify-content: space-between;
   margin: $cell / 2 0;
+
+  &:hover .g-todolist__item-del { display: block; }
+
+  &.completed .g-todolist__item-title { text-decoration: line-through;  }
+}
+
+.g-todolist__item-title {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.g-todolist__item-del {
+  display: none;
+  flex-basis: $cell / 2;
+  cursor: pointer;
+  opacity: .5;
+  &:hover { opacity: 1; }
+  &:after {
+    display: block;
+    content: '❌';
+  }
 }
 
 .g-footer {
